@@ -5,15 +5,153 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F8F9FA"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:cardElevation="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="16dp"
+                android:text="App_conversor_unidades"
+                android:textColor="@color/blue_color"
+                android:textSize="18sp" />
+        </androidx.cardview.widget.CardView>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="2dp"
+            android:background="@color/card_background"
+            app:tabTextColor="@color/tab_unselected"
+            app:tabSelectedTextColor="@color/blue_color">
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Temperatura"/>
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Moneda"/>
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Medidas"/>
+            
+        </com.google.android.material.tabs.TabLayout>
+
+        <FrameLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+    <!--  <com.google.android.material.tabs.TabLayout
+       android:id="@+id/tabLayout"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.5"
+       app:layout_constraintStart_toStartOf="0.5"
+       app:layout_constraintTop_toTopOf="parent">
+
+       <androidx.viewpager2.widget.ViewPager2
+           android:id="@+id/viewPager"
+           android:layout_width="0dp"
+           android:layout_height="0dp"
+           app/>
+
+   </com.google.android.material.tabs.TabLayout>
+
+ Contenedor principal
+   <androidx.cardview.widget.CardView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       app:cardCornerRadius="16dp"
+       app:cardElevation="6dp"
+       android:layout_margin="20dp"
+       android:padding="16dp"
+       app:cardBackgroundColor="#FFFFFF"
+       app:cardUseCompatPadding="true"
+       app:cardPreventCornerOverlap="false"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintEnd_toEndOf="parent">
+
+       <LinearLayout
+           android:orientation="vertical"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:gravity="center_horizontal">
+
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Hello World!"
+               app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toTopOf="parent" />
+           <!-TabLayout para elegir tipo de conversión
+           <com.google.android.material.tabs.TabLayout
+               android:id="@+id/tabLayout"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               app:tabIndicatorColor="@color/red"
+               app:tabTextColor="@color/black"
+               app:tabSelectedTextColor="@color/white"
+               app:tabBackground="@drawable/tab_selector">
+
+                <com.google.android.material.tabs.TabItem
+                   android:id="@+id/tab_temperatura"
+                   android:text="Temperatura"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   app:tabIndicatorColor="@color/tab_indicator"
+                   app:tabTextColor="@color/tab_unselected"
+                   app:tabSelectedTextColor="@color/tab_selected"/>
+
+               <!-  <com.google.android.material.tabs.TabItem
+                    android:id="@+id/tab_moneda"
+                    android:text="Moneda"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:tabIndicatorColor="@color/tab_indicator"
+                    app:tabTextColor="@color/tab_unselected"
+                    app:tabSelectedTextColor="@color/tab_selected"/>
+
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/tab_medidas"
+                    android:text="Medidas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:tabIndicatorColor="@color/tab_indicator"
+                    app:tabTextColor="@color/tab_unselected"
+                    app:tabSelectedTextColor="@color/tab_selected"/>
+
+
+
+           </com.google.android.material.tabs.TabLayout>
+       </LinearLayout>
+   </androidx.cardview.widget.CardView>  -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

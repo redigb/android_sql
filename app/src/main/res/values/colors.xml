@@ -2,4 +2,21 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+
+    <!-- Colores adicionales --> light_red
+    <color name="red">#E53935</color>
+    <color name="light_gray">#D6D6D6</color>
+    <color name="light_red">#FF474C</color>
+    <color name="gray">#9E9E9E</color>
+    <color name="dark_gray">#616161</color>
+    <color name="background">#F8F9FA</color>
+    <color name="card_background">#FFFFFF</color>
+    <color name="result_background">#FFECEC</color>
+    <color name="blue_color">#2196F3</color>
+
+    <!-- Colores del TabLayout -->
+    <color name="tab_unselected">#808080</color> <!-- Gris para pestañas inactivas -->
+    <color name="tab_selected">#FFFFFF</color> <!-- Blanco para pestañas activas -->
+    <color name="tab_indicator">#FF5722</color> <!-- Naranja para el indicador de pestañas -->
 </resources>
