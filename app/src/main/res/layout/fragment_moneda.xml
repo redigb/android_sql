@@ -24,11 +24,11 @@
 
         <!-- Campo de entrada de cantidad -->
         <EditText
-            android:id="@+id/input_amount"
+            android:id="@+id/input_monto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Ingrese la cantidad"
             android:inputType="numberDecimal"
+            android:hint=" 0"
             android:drawableStart="@drawable/change_money"
             android:padding="12dp"
             android:background="@android:drawable/editbox_background"

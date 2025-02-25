@@ -19,8 +19,6 @@ import com.example.sqliteandroid.databinding.FragmentTemperaturaBinding;
 public class TemperaturaFragment extends Fragment {
 
     private FragmentTemperaturaBinding temp_biding;
-    public static String textUrl = "";
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -34,15 +32,12 @@ public class TemperaturaFragment extends Fragment {
         Spinner spinnerTo = temp_biding.spinnerTo;
         TextView textResult = temp_biding.textResult;
 
-        // Opciones de temperatura
         String[] unidades = {"Celsius (°C)", "Fahrenheit (°F)", "Kelvin (K)", "Rankine (°R)", "Réaumur (°Re)"};
 
-        // Configurar los Spinners
         ArrayAdapter<String> adapter = new ArrayAdapter<>(requireContext(), android.R.layout.simple_spinner_dropdown_item, unidades);
         spinnerFrom.setAdapter(adapter);
         spinnerTo.setAdapter(adapter);
 
-        // Detectar cambios en los Spinners y actualizar el resultado
         AdapterView.OnItemSelectedListener listener = new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -56,7 +51,6 @@ public class TemperaturaFragment extends Fragment {
         spinnerFrom.setOnItemSelectedListener(listener);
         spinnerTo.setOnItemSelectedListener(listener);
 
-        // Detectar cambios en el campo de temperatura
         inputTemperature.addTextChangedListener(new android.text.TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
@@ -95,13 +89,14 @@ public class TemperaturaFragment extends Fragment {
         // Mostrar el resultado formateado
         textResult.setText(String.format("%.2f %s", resultado, unidadHasta));
     }
+
     private double convertirACelsius(double valor, String unidadDesde) {
         switch (unidadDesde) {
             case "Fahrenheit (°F)": return (valor - 32) * 5 / 9;
             case "Kelvin (K)": return valor - 273.15;
             case "Rankine (°R)": return (valor - 491.67) * 5 / 9;
             case "Réaumur (°Re)": return valor * 5 / 4;
-            default: return valor; // Si es Celsius, no se convierte
+            default: return valor;  // --> Devolver valor si no hay conversion
         }
     }
 
